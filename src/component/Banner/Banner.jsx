@@ -1,6 +1,6 @@
 const Banner = () => {
     return (
-        <div>
+        <div className="mx-2 lg:mx-14 ">
             <div className="mt-4 lg:mt-6 hero min-h-screen rounded-2xl" style={{ backgroundImage: 'url(https://i.ibb.co/PxKPH90/banner.png)' }}>
                 <div className="text-center text-neutral-content lg:space-y-14 p-6">
 

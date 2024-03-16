@@ -1,7 +1,7 @@
 import profile from '../../assets/images/profile-icon.png'
 const Header = () => {
     return (
-        <div>
+        <div className='mx-2 lg:mx-14 '>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown lg:hidden">
