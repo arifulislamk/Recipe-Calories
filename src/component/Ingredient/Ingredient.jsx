@@ -1,4 +1,5 @@
 import { GoDot } from "react-icons/go";
+import PropTypes from 'prop-types';
 
 const Ingredient = ({ ingred }) => {
     return (
@@ -7,5 +8,7 @@ const Ingredient = ({ ingred }) => {
         </>
     )
 };
-
+Ingredient.propTypes = {
+    ingred: PropTypes.string
+}
 export default Ingredient;

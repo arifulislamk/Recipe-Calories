@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { AiOutlineFire } from "react-icons/ai";
 import { IoTimeOutline } from "react-icons/io5";
 import Ingredient from "../Ingredient/Ingredient"
-const Cart = ({ cart }) => {
+const Cart = ({ cart, handleCookBtn }) => {
     // console.log(cart)
     const { recipe_image, recipe_id, recipe_name, short_description,
         preparing_time, calories, ingredients } = cart;
@@ -21,7 +21,7 @@ const Cart = ({ cart }) => {
                     <p className='text-[#282828] font-medium text-[16px} mb-2'>Ingredients : {ingredients.length}</p>
                     <ul>
                         {
-                            ingredients.map((ingred,idx) => <Ingredient 
+                            ingredients.map((ingred, idx) => <Ingredient
                                 key={idx}
                                 ingred={ingred}></Ingredient>)
                         }
@@ -31,7 +31,7 @@ const Cart = ({ cart }) => {
                     <p className='flex items-center gap-2'><IoTimeOutline />{preparing_time}</p>
                     <p className='flex items-center gap-2'><AiOutlineFire></AiOutlineFire>{calories}</p>
                 </div>
-                <button className='btn text-[#150B2B] bg-[#0BE58A] rounded-lg p-3'>Want to Cook</button>
+                <button onClick={() => handleCookBtn(cart)} className='btn text-[#150B2B] bg-[#0BE58A] rounded-lg p-3'>Want to Cook</button>
             </div>
         </div>
     );
@@ -39,6 +39,7 @@ const Cart = ({ cart }) => {
 
 Cart.propTypes = {
     cart: PropTypes.object,
+    handleCookBtn: PropTypes.func
 }
 
 export default Cart;

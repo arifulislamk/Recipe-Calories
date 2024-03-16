@@ -1,8 +1,14 @@
+import { useState } from "react";
 import Carts from "../Carts/Carts";
-import WantCook from "../WantCook/WantCook";
+import TableContainer from "../TableContainer/TableContainer";
 
 const OurRecipes = () => {
-    
+
+    const [cart1, setCart] = useState([])
+    const handleCookBtn = cart => {
+        const newCart = [...cart1, cart]
+        setCart(newCart)
+    }
 
     return (
         <div className="mx-2 lg:mx-14 ">
@@ -12,8 +18,12 @@ const OurRecipes = () => {
                     Eget urna volutpat curabitur elementum mauris aenean neque. </p>
             </div>
             <div className="mt-10 flex flex-col lg:flex-row">
-                <Carts></Carts>
-                <WantCook></WantCook>
+                <Carts
+                    handleCookBtn={handleCookBtn}
+                ></Carts>
+
+                <TableContainer 
+                cart1={cart1}></TableContainer>
             </div>
         </div>
     );

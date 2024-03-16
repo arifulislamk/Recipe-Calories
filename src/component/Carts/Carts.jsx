@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Cart from "../Cart/Cart";
+import PropTypes from 'prop-types';
 
-const Carts = () => {
+const Carts = ({handleCookBtn}) => {
 
     const [carts, setCarts] = useState([]);
 
@@ -18,11 +19,15 @@ const Carts = () => {
                 {
                     carts.map((cart, idx) => <Cart
                         key={idx}
+                        handleCookBtn={handleCookBtn}
                         cart={cart}></Cart>)
                 }
             </div>
         </div>
     );
 };
+Carts.propTypes = {
+    handleCookBtn: PropTypes.func
+}
 
 export default Carts;
