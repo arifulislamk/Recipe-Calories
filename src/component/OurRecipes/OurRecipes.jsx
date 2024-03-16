@@ -9,7 +9,6 @@ const OurRecipes = () => {
         const newCart = [...cart1, cart]
         setCart(newCart)
     }
-
     return (
         <div className="mx-2 lg:mx-14 ">
             <div className="text-center mt-4 lg:mt-20">
@@ -22,8 +21,8 @@ const OurRecipes = () => {
                     handleCookBtn={handleCookBtn}
                 ></Carts>
 
-                <TableContainer 
-                cart1={cart1}></TableContainer>
+                <TableContainer
+                    cart1={cart1}></TableContainer>
             </div>
         </div>
     );

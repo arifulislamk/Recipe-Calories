@@ -1,44 +1,43 @@
+import { useState } from "react";
 import TopTable from "../TopTable/TopTable";
 import PropTypes from 'prop-types';
+import BottomTable from "../BottomTable/BottomTable";
 
-const TableContainer = ({ cart1 }) => {
+const TableContainer = ({ cart1}) => {
+
+    const [tables,settable] = useState([])
+    const handlePrepareBtn = table =>{
+        // console.log('click by prepare',table)
+        const newTable = [...tables, table] ;
+        settable(newTable)
+    }
+    console.log(tables)
+
     return (
         <div className="border-2 border-stone-400 lg:w-2/5 flex items-center flex-col">
 
             <div className=" space-y-4 ">
                 <h2 className="mb-4 lg:text-2xl font-semibold text-[#282828] text-center">Want to cook: {cart1.length}</h2>
                 {
-                    cart1.map(table => <TopTable key={table.recipe_id
-                    } table={table}></TopTable>)
+                    cart1.map((table,inx) => <TopTable
+                        handlePrepareBtn={handlePrepareBtn}
+                        key={table.recipe_id}
+                        inx={inx}
+                        table={table}
+                    ></TopTable>)
                 }
 
             </div>
 
             <div className="mt-6 space-y-4 ">
-                <h2 className="mb-3 lg:text-2xl font-semibold text-[#282828] text-center">Currently cooking: 02</h2>
-                <div>
-                    <table className="">
-                        <thead className="text-[#878787] font-medium">
-                            <tr className="flex lg:space-x-10">
-                                <th></th>
-                                <th>Name</th>
-                                <th>Time</th>
-                                <th>Calories</th>
-                            </tr>
-                        </thead>
-                        <tbody >
-
-                            <tr className="flex lg:space-x-10" >
-                                <th>1</th>
-                                <td>Cy Ganderton</td>
-                                <td>Quality Control Specialist</td>
-                                <td>Blue</td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-
-                </div>
+                <h2 className="mb-3 lg:text-2xl font-semibold text-[#282828] text-center">Currently cooking: {tables.length}</h2>
+                {
+                    tables.map((table,inx) => <BottomTable 
+                        key={table.recipe_id}
+                        inx={inx}
+                        table={table}
+                        ></BottomTable>)
+                }
             </div>
 
         </div>
