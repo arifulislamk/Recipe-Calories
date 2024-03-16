@@ -13,9 +13,9 @@ const Carts = () => {
     }, [])
 
     return (
-        <div>
+        <div className="lg:w-3/5">
             <h3>Carts : {carts.length}</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-3/5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {
                     carts.map((cart, idx) => <Cart
                         key={idx}

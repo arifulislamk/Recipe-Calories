@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { AiOutlineFire } from "react-icons/ai";
 import { IoTimeOutline } from "react-icons/io5";
-import Ingredient from '../Ingredient/Ingredient';
+import Ingredient from "../Ingredient/Ingredient"
 const Cart = ({ cart }) => {
     // console.log(cart)
     const { recipe_image, recipe_id, recipe_name, short_description,
@@ -19,6 +19,11 @@ const Cart = ({ cart }) => {
 
                 <div>
                     <p className='text-[#282828] font-medium text-[16px}'>Ingredients : {ingredients.length}</p>
+                    <ul>
+                        {
+                            ingredients.map(ingred => <Ingredient ingred={ingred}></Ingredient>)
+                        }
+                    </ul>
                 </div>
                 <div className='lg:flex gap-3 text-[#282828CC]'>
                     <p className='flex items-center gap-2'><IoTimeOutline />{preparing_time}</p>

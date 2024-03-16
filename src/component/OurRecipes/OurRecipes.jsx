@@ -1,4 +1,5 @@
 import Carts from "../Carts/Carts";
+import WantCook from "../WantCook/WantCook";
 
 const OurRecipes = () => {
     return (
@@ -8,8 +9,10 @@ const OurRecipes = () => {
                 <p className="text-[#150B2B99]">Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus.
                     Eget urna volutpat curabitur elementum mauris aenean neque. </p>
             </div>
-            <Carts></Carts>
-
+            <div className="mt-4 flex flex-col lg:flex-row">
+                <Carts></Carts>
+                <WantCook></WantCook>
+            </div>
         </div>
     );
 };
