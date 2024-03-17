@@ -5,12 +5,12 @@ const TopTable = ({ table, handlePrepareBtn, inx }) => {
     } = table;
     return (
         <>
-            <tr className="flex lg:space-x-10" >
+            <tr className="flex lg:space-x-10 bg-stone-200 rounded-md p-2" >
                 <th>{inx + 1}</th>
                 <td>{recipe_name}</td>
                 <td>{preparing_time}</td>
                 <td>{calories}</td>
-                <td><button onClick={() => handlePrepareBtn(table,recipe_id)} className="btn text-[#150B2B] font-semibold rounded-2xl bg-[#0BE58A] ">
+                <td><button onClick={() => handlePrepareBtn(table,recipe_id,preparing_time,calories)} className="btn text-[#150B2B] font-semibold rounded-2xl bg-[#0BE58A] ">
                     Preparing</button></td>
             </tr>
         </>

@@ -14,13 +14,25 @@ const OurRecipes = () => {
 
 
     const [tables, settable] = useState([])
-    const handlePrepareBtn = (table,id) => {
+    const [times ,settimes] = useState(0) 
+    const [calories, setcalories] = useState(0)
+
+    const handlePrepareBtn = (table,id,time,calorie) => {
         const newTable = [...tables, table];
         settable(newTable)
 
         const remeningCart = cart1.filter(cart => cart.recipe_id !== id) ;
         setCart(remeningCart)
+
+        const timeInteger = parseInt(time)
+        const newTime = times + timeInteger ;
+        settimes(newTime) ;
+
+        const caloriesInteger = parseInt(calorie);
+        const newCalories = calories + caloriesInteger ;
+        setcalories(newCalories);
     }
+    // console.log(times)
 
     return (
         <div className="mx-2 lg:mx-14 ">
@@ -37,6 +49,8 @@ const OurRecipes = () => {
                 <TableContainer
                     tables={tables}
                     handlePrepareBtn={handlePrepareBtn}
+                    times={times}
+                    calories={calories}
                     cart1={cart1}></TableContainer>
             </div>
         </div>

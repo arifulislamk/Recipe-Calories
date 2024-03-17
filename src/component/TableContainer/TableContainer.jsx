@@ -2,13 +2,14 @@ import TopTable from "../TopTable/TopTable";
 import PropTypes from 'prop-types';
 import BottomTable from "../BottomTable/BottomTable";
 
-const TableContainer = ({ cart1,handlePrepareBtn,tables }) => {
+const TableContainer = ({ cart1,handlePrepareBtn,tables,times,calories }) => {
     return (
         <div className="border-2 border-stone-400 lg:w-2/5 flex items-center flex-col">
 
+            {/* first Table  */}
             <div className=" space-y-4 ">
                 <h2 className="mb-4 lg:text-2xl font-semibold text-[#282828] text-center">Want to cook: {cart1.length}</h2>
-                <table className="table-auto">
+                <table className="table-auto border-6 ">
                     <thead className="text-[#878787] font-medium">
                         <tr className="flex lg:space-x-10 ">
                             <th> </th>
@@ -29,11 +30,11 @@ const TableContainer = ({ cart1,handlePrepareBtn,tables }) => {
                         }
                     </tbody>
                 </table>
-
             </div>
 
-            <div className="mt-6 space-y-4 ">
-                <h2 className="mb-3 lg:text-2xl font-semibold text-[#282828] text-center">Currently cooking: {tables.length}</h2>
+                        {/* Second Table  */}
+            <div className="mt-6 w-full grid justify-center space-y-4 ">
+                <h2 className="mb-4 lg:text-2xl font-semibold text-[#282828] text-center">Currently cooking: {tables.length}</h2>
                 <table className="table-auto">
                     <thead className="text-[#878787] font-medium">
                         <tr className="flex lg:space-x-10">
@@ -50,11 +51,18 @@ const TableContainer = ({ cart1,handlePrepareBtn,tables }) => {
                                 inx={inx}
                                 table={table}
                             ></BottomTable>)
-                        }
+                        }                    
                     </tbody>
-
                 </table>
+
+                <div className="flex justify-end items-center gap-5">
+                    <p>Total time=<br /> {times} minits</p>
+                    <p>Total Calories=  {calories} <br /> calories</p>
+                </div>
+
             </div>
+
+
 
         </div >
     );
