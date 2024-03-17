@@ -4,7 +4,7 @@ import { IoTimeOutline } from "react-icons/io5";
 import Ingredient from "../Ingredient/Ingredient"
 const Cart = ({ cart, handleCookBtn }) => {
     // console.log(cart)
-    const { recipe_image, recipe_id, recipe_name, short_description,
+    const { recipe_image, recipe_name, short_description,
         preparing_time, calories, ingredients } = cart;
     // console.log(ingredients)
 

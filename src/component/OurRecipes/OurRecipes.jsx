@@ -1,14 +1,27 @@
 import { useState } from "react";
 import Carts from "../Carts/Carts";
 import TableContainer from "../TableContainer/TableContainer";
+import { ToastContainer, toast } from 'react-toastify';
 
 const OurRecipes = () => {
 
-    const [cart1, setCart] = useState([])
+    const [cart1, setCart] = useState([]) 
     const handleCookBtn = cart => {
         const newCart = [...cart1, cart]
         setCart(newCart)
+        toast('Already Exist')
     }
+
+
+    const [tables, settable] = useState([])
+    const handlePrepareBtn = (table,id) => {
+        const newTable = [...tables, table];
+        settable(newTable)
+
+        const remeningCart = cart1.filter(cart => cart.recipe_id !== id) ;
+        setCart(remeningCart)
+    }
+
     return (
         <div className="mx-2 lg:mx-14 ">
             <div className="text-center mt-4 lg:mt-20">
@@ -22,10 +35,13 @@ const OurRecipes = () => {
                 ></Carts>
 
                 <TableContainer
+                    tables={tables}
+                    handlePrepareBtn={handlePrepareBtn}
                     cart1={cart1}></TableContainer>
             </div>
         </div>
     );
 };
+
 
 export default OurRecipes;
