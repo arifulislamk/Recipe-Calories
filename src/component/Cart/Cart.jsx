@@ -9,7 +9,7 @@ const Cart = ({ cart, handleCookBtn }) => {
     // console.log(ingredients)
 
     return (
-        <div className="grid justify-center p-3  border-2 border-stone-400 rounded-2xl">
+        <div className="grid justify-center lg:py-6  border-2 border-stone-400 shadow-xl rounded-2xl">
             <div className=''><img className="mb-3 lg:mb-8 lg:w-[340px] lg:h-[200px] rounded-lg border-1 " src={recipe_image} alt="" /></div>
             <div className='lg:w-[340px] space-y-3 lg:space-y-6'>
                 <div>

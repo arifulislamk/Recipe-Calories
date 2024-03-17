@@ -6,8 +6,8 @@ const Banner = () => {
 
                     <h1 className="mb-5 text-2xl lg:text-5xl font-bold">Discover an exceptional cooking <br />
                         class tailored for you!</h1>
-                    <p className="mb-5">Learn and Master Basic Programming, Data Structures, Algorithm, OOP, Database and solve 500+ coding <br />
-                        problems to become an exceptionally well world-class Programmer.</p>
+                    <p className="mb-5">Khan Calories opened on Thanksgiving Day 1990. Chef / Owner Ariful Islam Khan began baking pies <br /> and selling them to restaurants .  Today, NYC’s beloved restaurant 
+                    and pie  shop celebrates 32 years of classic, made from scratch Bangladeshi cooking. </p>
                     <div className="flex flex-col lg:flex-row gap-4 justify-center">
                         <button className="btn px-8  text-[#150B2B] text-xl font-semibold rounded-full bg-[#0BE58A] ">Explore Now</button>
                         <a className=" text-xl font-semibold border-2 rounded-full p-2 ">Our Feedback</a>
