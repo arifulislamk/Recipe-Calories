@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Carts from "../Carts/Carts";
 import TableContainer from "../TableContainer/TableContainer";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const OurRecipes = () => {
 
